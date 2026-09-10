@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - ธัญชนก ผ่องแผ้ว</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { background-color: #FFFDE7; color: #333; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+        
+        .card { background: white; border-radius: 30px; box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2); max-width: 650px; width: 100%; padding: 40px; border: 2px solid #FFE082; text-align: center; }
+        
+        .my-photo-frame {
+            width: 100%;
+            max-width: 220px;
+            aspect-ratio: 3 / 4;
+            margin: 0 auto 25px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid #FFC107;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+            background-color: #FFF8E1;
+        }
+        .my-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+        h1 { color: #37474F; font-size: 2.3rem; margin-bottom: 15px; }
+        .thank-text { font-size: 1.05rem; line-height: 1.8; color: #455A64; margin-bottom: 25px; }
+
+        /* ขยายพื้นที่ส่วนโลโก้และชื่อมหาวิทยาลัยให้ใหญ่และชัดเจนขึ้น */
+        .university-section {
+            background: #FFF8E1;
+            border: 2px solid #FFE082;
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            box-shadow: inset 0 0 10px rgba(255, 193, 7, 0.1);
+        }
+
+        .uni-logo {
+            max-width: 130px; /* ปรับขนาดโลโก้ให้ใหญ่ขึ้น */
+            max-height: 130px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+        }
+
+        .uni-name {
+            font-size: 1.4rem; /* ปรับขนาดข้อความชื่อมหาลัยใหญ่ขึ้น */
+            font-weight: 600;
+            color: #D81B60;
+        }
+
+        .faculty-name {
+            font-size: 1.1rem;
+            color: #37474F;
+            font-weight: 400;
+        }
+
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn { padding: 12px 28px; font-size: 1rem; font-weight: 600; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; color: #546E7A; background-color: #ECEFF1; border: 1px solid #CFD8DC; }
+        .btn:hover { color: #212121; background-color: #FFC107; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3); transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="my-photo-frame">
+            <img src="tkface.jpg" alt="ธัญชนก ผ่องแผ้ว" class="my-photo">
+        </div>
+
+        <h1>THANK YOU</h1>
+        
+        <p class="thank-text">
+            ขอขอบพระคุณท่านคณะกรรมการเป็นอย่างสูงที่ได้เสียสละเวลาอันมีค่าในการรับชมและพิจารณาแฟ้มสะสมผลงานฉบับนี้<br>
+            ข้าพเจ้ามีความมุ่งมั่นและหวังเป็นอย่างยิ่งว่าจะได้รับโอกาสเข้าศึกษาต่อในคณะมนุษยศาสตร์และสังคมศาสตร์ สาขาจิตวิทยา มหาวิทยาลัยบูรพา ค่ะ
+        </p>
+
+        <!-- โซนโลโก้และชื่อมหาวิทยาลัยบูรพา ปรับขนาดใหญ่ขึ้น -->
+        <div class="university-section">
+            <img src="https://upload.wikimedia.org/wikipedia/th/1/1a/Burapha_University_Logo.png" alt="Burapha University Logo" class="uni-logo">
+            <div class="uni-name">มหาวิทยาลัยบูรพา</div>
+            <div class="faculty-name">คณะมนุษยศาสตร์และสังคมศาสตร์ สาขาจิตวิทยา</div>
+        </div>
+
+        <div class="btn-group">
+            <a href="portfolio.html" class="btn">← ย้อนกลับไปหน้าผลงาน</a>
+            <a href="index.html" class="btn">กลับหน้าแรก 🏠</a>
+        </div>
+    </div>
+
+</body>
+</html>
