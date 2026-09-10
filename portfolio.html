@@ -7,27 +7,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
-        body { background-color: #FFFDE7; color: #333; padding: 40px 20px; min-height: 100vh; }
+        body { background-color: #FFF0F5; color: #4A4A4A; padding: 40px 20px; min-height: 100vh; }
         .container { max-width: 1000px; margin: 0 auto; }
         
-        .header { background: white; padding: 20px 25px; border-radius: 20px; border: 2px solid #FFE082; box-shadow: 0 4px 15px rgba(255,193,7,0.15); display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px; gap: 15px; }
-        h1 { color: #37474F; font-size: 1.6rem; text-align: center; flex: 1; }
+        .header { background: #FFFFFF; padding: 20px 25px; border-radius: 20px; border: 2px solid #FFC0CB; box-shadow: 0 4px 15px rgba(255,182,193,0.3); display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px; gap: 15px; }
+        h1 { color: #D81B60; font-size: 1.6rem; text-align: center; flex: 1; }
         .btn-nav { padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; white-space: nowrap; }
-        .btn-back { background: #ECEFF1; color: #455A64; }
-        .btn-back:hover { background: #CFD8DC; }
-        .btn-next { background: #FFC107; color: #212121; box-shadow: 0 4px 12px rgba(255,193,7,0.3); }
-        .btn-next:hover { background: #FFB300; transform: translateY(-2px); }
+        .btn-back { background: #FFF0F5; color: #D81B60; border: 1px solid #FFC0CB; }
+        .btn-back:hover { background: #FFE4E1; }
+        .btn-next { background: #FFB6C1; color: #FFFFFF; box-shadow: 0 4px 12px rgba(255,182,193,0.5); }
+        .btn-next:hover { background: #FF69B4; transform: translateY(-2px); }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: white; border-radius: 15px; border: 1px solid #FFE082; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255,193,7,0.25); }
-        .card-img { width: 100%; height: 210px; object-fit: cover; background-color: #FFFDE7; }
+        .card { background: #FFFFFF; border-radius: 20px; border: 1px solid #FFC0CB; overflow: hidden; box-shadow: 0 4px 12px rgba(255,182,193,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255,182,193,0.4); }
+        .card-img { width: 100%; height: 210px; object-fit: cover; background-color: #FFF0F5; }
         .card-body { padding: 20px; }
-        .card-body h3 { color: #F57F17; font-size: 1.05rem; margin-bottom: 8px; line-height: 1.4; }
-        .card-body p { color: #555; font-size: 0.9rem; line-height: 1.6; }
+        .card-body h3 { color: #D81B60; font-size: 1.05rem; margin-bottom: 8px; line-height: 1.4; }
+        .card-body p { color: #666; font-size: 0.9rem; line-height: 1.6; }
         
         .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
-        .modal-content { max-width: 90%; max-height: 90%; border-radius: 10px; }
+        .modal-content { max-width: 90%; max-height: 90%; border-radius: 15px; border: 3px solid #FFB6C1; }
 
         @media (max-width: 768px) {
             .header { flex-direction: column; text-align: center; }
@@ -39,12 +39,11 @@
     <div class="container">
         <div class="header">
             <a href="about.html" class="btn-nav btn-back">← ประวัติส่วนตัว</a>
-            <h1>🏆 แฟ้มสะสมผลงานและเกียรติบัตร</h1>
-            <a href="thankyou.html" class="btn-nav btn-next">ไปยังหน้าปิดท้าย →</a>
+            <h1>🏆 ผลงานและเกียรติบัตร 🏆</h1>
+            <a href="thankyou.html" class="btn-nav btn-next">ไปยังหน้าปิดท้าย 🌸 →</a>
         </div>
 
         <div class="grid">
-            <!-- ใบที่ 1: tk1.jpg -->
             <div class="card" onclick="openModal('tk1.jpg')">
                 <img src="tk1.jpg" alt="ค่ายพัฒนาคุณธรรม จริยธรรม 2568" class="card-img">
                 <div class="card-body">
@@ -53,8 +52,7 @@
                 </div>
             </div>
 
-            <!-- ใบที่ 2: tk2.jpg -->
-            <div class="card" onclick="openModal('tk3.jpg')">
+            <div class="card" onclick="openModal('tk2.jpg')">
                 <img src="tk2.jpg" alt="ค่ายพัฒนาคุณธรรม จริยธรรม 2569" class="card-img">
                 <div class="card-body">
                     <h3>2. ค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน (ปีการศึกษา 2569)</h3>
@@ -62,8 +60,7 @@
                 </div>
             </div>
 
-            <!-- ใบที่ 3: tk3.jpg -->
-            <div class="card" onclick="openModal('tk2.jpg')">
+            <div class="card" onclick="openModal('tk3.jpg')">
                 <img src="tk3.jpg" alt="กรรมการฝ่ายลงทะเบียน งานศิลปหัตถกรรมนักเรียน ครั้งที่ 73" class="card-img">
                 <div class="card-body">
                     <h3>3. คณะกรรมการฝ่ายลงทะเบียน งานศิลปหัตถกรรมนักเรียน ครั้งที่ 73</h3>
@@ -71,7 +68,6 @@
                 </div>
             </div>
 
-            <!-- ใบที่ 4: tk4.jpg -->
             <div class="card" onclick="openModal('tk4.jpg')">
                 <img src="tk4.jpg" alt="SMART AND SAFE DIGITAL LIFE" class="card-img">
                 <div class="card-body">
