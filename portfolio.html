@@ -3,37 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แฟ้มสะสมงานของธัญชนก</title>
+    <title>Portfolio - ธัญชนก ผ่องแผ้ว</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; background-color: #f4f7f6; text-align: center; padding: 30px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .project-card { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
-        /* ปรับสไตล์รูปภาพตามที่คุณต้องการ: เป็นกรอบสี่เหลี่ยม */
-        .profile-img { width: 200px; height: auto; border: 5px solid #2c3e50; border-radius: 0; margin-bottom: 20px; }
-        .btn { display: inline-block; background: #2c3e50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { background-color: #FFFDE7; color: #333; padding: 40px 20px; min-height: 100vh; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .header { background: white; padding: 20px 25px; border-radius: 20px; border: 2px solid #FFE082; box-shadow: 0 4px 15px rgba(255,193,7,0.15); display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px; gap: 15px; }
+        h1 { color: #37474F; font-size: 1.6rem; text-align: center; flex: 1; }
+        .btn-nav { padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; white-space: nowrap; }
+        .btn-back { background: #ECEFF1; color: #455A64; }
+        .btn-back:hover { background: #CFD8DC; }
+        .btn-next { background: #FFC107; color: #212121; box-shadow: 0 4px 12px rgba(255,193,7,0.3); }
+        .btn-next:hover { background: #FFB300; transform: translateY(-2px); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: white; border-radius: 15px; border: 1px solid #FFE082; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255,193,7,0.25); }
+        .card-img { width: 100%; height: 210px; object-fit: cover; background-color: #FFFDE7; }
+        .card-body { padding: 20px; }
+        .card-body h3 { color: #F57F17; font-size: 1.05rem; margin-bottom: 8px; line-height: 1.4; }
+        .card-body p { color: #555; font-size: 0.9rem; line-height: 1.6; }
+        
+        .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
+        .modal-content { max-width: 90%; max-height: 90%; border-radius: 10px; }
+
+        @media (max-width: 768px) {
+            .header { flex-direction: column; text-align: center; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
-        
-        <h1>📁 แฟ้มสะสมงานของธัญชนก</h1>
-        <img src="images.png" alt="รูปโปรไฟล์ของฉัน" width="200">
-        <p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
-
-        <div class="project-card">
-            <h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์คำนวณ</h3>
-            <p>รายละเอียดชิ้นงาน: เขียนอธิบายสั้นๆ ว่าทำอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง</p>
+        <div class="header">
+            <a href="about.html" class="btn-nav btn-back">← ประวัติส่วนตัว</a>
+            <h1>🏆 แฟ้มสะสมผลงานและเกียรติบัตร</h1>
+            <a href="thankyou.html" class="btn-nav btn-next">ไปยังหน้าปิดท้าย →</a>
         </div>
 
-        <div class="project-card">
-            <h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-            <p>รายละเอียดชิ้นงาน: เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
-        </div>
+        <div class="grid">
+            <!-- ใบที่ 1: tk1.jpg -->
+            <div class="card" onclick="openModal('tk1.jpg')">
+                <img src="tk1.jpg" alt="ค่ายพัฒนาคุณธรรม จริยธรรม 2568" class="card-img">
+                <div class="card-body">
+                    <h3>1. ค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน (ปีการศึกษา 2568)</h3>
+                    <p>เข้าร่วมกิจกรรมค่ายพัฒนาคุณธรรม จริยธรรม เพื่อฝึกฝนจิตใจ การตระหนักรู้ในตนเอง ความเมตตา และการปลูกฝังจิตสาธารณะในการอยู่ร่วมกันในสังคม ณ วันที่ 10 มิถุนายน 2568</p>
+                </div>
+            </div>
 
-        <a href="index.html" class="btn"> กลับหน้าแรก</a>
+            <!-- ใบที่ 2: tk2.jpg -->
+            <div class="card" onclick="openModal('tk2.jpg')">
+                <img src="tk2.jpg" alt="ค่ายพัฒนาคุณธรรม จริยธรรม 2569" class="card-img">
+                <div class="card-body">
+                    <h3>2. ค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน (ปีการศึกษา 2569)</h3>
+                    <p>เข้าร่วมโครงการอบรมเชิงปฏิบัติการพัฒนาคุณธรรมอย่างต่อเนื่อง เพื่อเสริมสร้างความรับผิดชอบ การควบคุมอารมณ์ และสร้างการมีส่วนร่วมในสังคม ณ วันที่ 8 กรกฎาคม 2569</p>
+                </div>
+            </div>
+
+            <!-- ใบที่ 3: tk3.jpg -->
+            <div class="card" onclick="openModal('tk3.jpg')">
+                <img src="tk3.jpg" alt="กรรมการฝ่ายลงทะเบียน งานศิลปหัตถกรรมนักเรียน ครั้งที่ 73" class="card-img">
+                <div class="card-body">
+                    <h3>3. คณะกรรมการฝ่ายลงทะเบียน งานศิลปหัตถกรรมนักเรียน ครั้งที่ 73</h3>
+                    <p>ปฏิบัติหน้าที่กรรมการฝ่ายลงทะเบียน ระดับเขตพื้นที่การศึกษามัธยมศึกษาชลบุรี ระยอง ฝึกทักษะการสื่อสารปฏิสัมพันธ์กับผู้อื่น การแก้ปัญหาเฉพาะหน้า และการบริการประสานงาน</p>
+                </div>
+            </div>
+
+            <!-- ใบที่ 4: tk4.jpg -->
+            <div class="card" onclick="openModal('tk4.jpg')">
+                <img src="tk4.jpg" alt="SMART AND SAFE DIGITAL LIFE" class="card-img">
+                <div class="card-body">
+                    <h3>4. นิทรรศการ SMART AND SAFE DIGITAL LIFE (ปีการศึกษา 2569)</h3>
+                    <p>เข้าร่วมกิจกรรมด้านเทคโนโลยีเนื่องในงานสัปดาห์วิทยาศาสตร์แห่งชาติ ได้รับความรู้การประยุกต์ใช้เทคโนโลยีอย่างปลอดภัยและการเข้าใจพฤติกรรมมนุษย์ในยุคดิจิทัล ณ วันที่ 20 สิงหาคม 2569</p>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImg" class="modal-content" src="" alt="Enlarged Certificate">
+    </div>
+
+    <script>
+        function openModal(imgSrc) {
+            document.getElementById('imageModal').style.display = 'flex';
+            document.getElementById('modalImg').src = imgSrc;
+        }
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
