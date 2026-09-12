@@ -26,12 +26,23 @@
         .info-list li { margin-bottom: 14px; font-size: 1rem; color: #555; line-height: 1.6; display: flex; flex-wrap: wrap; }
         .info-list li strong { color: #D81B60; min-width: 100px; display: inline-block; }
 
-        /* สไตล์ส่วนทักษะใหม่ */
+        /* สไตล์ส่วนทักษะ */
         .skill-block { background: #FFF0F5; border-radius: 15px; border: 1px solid #FFC0CB; padding: 15px; margin-bottom: 15px; }
         .skill-block h3 { color: #D81B60; font-size: 1.05rem; margin-bottom: 8px; }
         .skill-block p { color: #555; font-size: 0.88rem; line-height: 1.5; margin-bottom: 10px; }
-        .skill-img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; border: 1px solid #FFC0CB; cursor: pointer; transition: transform 0.3s ease; background-color: #FFFFFF; }
-        .skill-img:hover { transform: scale(1.02); }
+        
+        /* ปรับกรอบรูปภาพเป็นอัตราส่วน 9:16 แนวตั้ง */
+        .skill-img-frame {
+            width: 100%;
+            max-width: 200px;
+            aspect-ratio: 9 / 16;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #FFC0CB;
+        }
+        .skill-img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; transition: transform 0.3s ease; background-color: #FFFFFF; display: block; }
+        .skill-img:hover { transform: scale(1.03); }
 
         /* Modal สำหรับดูรูปขยาย */
         .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
@@ -53,7 +64,7 @@
         </div>
 
         <div class="about-grid">
-            <!-- ด้านซ้าย: ประวัติส่วนตัว (คงเดิม) -->
+            <!-- ด้านซ้าย: ประวัติส่วนตัว -->
             <div class="info-card">
                 <div class="card-title">📝 ประวัติส่วนตัว</div>
                 <ul class="info-list">
@@ -69,7 +80,7 @@
                 </ul>
             </div>
 
-            <!-- ด้านขวา: ความถนัดและทักษะ (ปรับปรุงใหม่ 3 ข้อ + รูปภาพ) -->
+            <!-- ด้านขวา: ความถนัดและทักษะ (รูปอัตราส่วน 9:16) -->
             <div class="info-card">
                 <div class="card-title">💗 ความถนัดและทักษะ</div>
                 
@@ -77,21 +88,27 @@
                 <div class="skill-block">
                     <h3>🤝 1. จิตอาสา (Volunteer Spirit)</h3>
                     <p><!-- ใส่ข้อความอธิบายทักษะจิตอาสาที่นี่ --></p>
-                    <img src="NpVolunteer2.jpg" alt="จิตอาสา" class="skill-img" onclick="openModal('volunteer1.jpg')">
+                    <div class="skill-img-frame">
+                        <img src="NpVolunteer.jpg" alt="จิตอาสา" class="skill-img" onclick="openModal('volunteer1.jpg')">
+                    </div>
                 </div>
 
                 <!-- ข้อ 2: ทำงานเป็นทีม -->
                 <div class="skill-block">
                     <h3>👥 2. การทำงานเป็นทีม (Teamwork)</h3>
                     <p><!-- ใส่ข้อความอธิบายการทำงานเป็นทีมที่นี่ --></p>
-                    <img src="NpRobot.jpg" alt="การทำงานเป็นทีม" class="skill-img" onclick="openModal('teamwork1.jpg')">
+                    <div class="skill-img-frame">
+                        <img src="NpRobot.jpg" alt="การทำงานเป็นทีม" class="skill-img" onclick="openModal('teamwork1.jpg')">
+                    </div>
                 </div>
 
                 <!-- ข้อ 3: กิจกรรม -->
                 <div class="skill-block">
                     <h3>🎉 3. การเข้าร่วมกิจกรรม (Activities)</h3>
                     <p><!-- ใส่ข้อความอธิบายกิจกรรมที่นี่ --></p>
-                    <img src="tk5.jpg" alt="กิจกรรม" class="skill-img" onclick="openModal('activity1.jpg')">
+                    <div class="skill-img-frame">
+                        <img src="tk5.jpg" alt="กิจกรรม" class="skill-img" onclick="openModal('activity1.jpg')">
+                    </div>
                 </div>
             </div>
         </div>
