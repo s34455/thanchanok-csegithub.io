@@ -31,8 +31,22 @@
         .skill-block h3 { color: #D81B60; font-size: 1.05rem; margin-bottom: 8px; }
         .skill-block p { color: #555; font-size: 0.88rem; line-height: 1.5; margin-bottom: 10px; }
         
-        /* ปรับกรอบรูปภาพเป็นอัตราส่วน 9:16 แนวตั้ง */
-        .skill-img-frame {
+        /* สไตล์รูปภาพแนวนอน (สำหรับข้อ 1 และ 2) */
+        .skill-img-horizontal { 
+            width: 100%; 
+            height: 160px; 
+            object-fit: cover; 
+            border-radius: 12px; 
+            border: 1px solid #FFC0CB; 
+            cursor: pointer; 
+            transition: transform 0.3s ease; 
+            background-color: #FFFFFF; 
+            display: block; 
+        }
+        .skill-img-horizontal:hover { transform: scale(1.02); }
+
+        /* สไตล์กรอบรูปภาพแนวตั้ง 9:16 (สำหรับข้อ 3) */
+        .skill-img-frame-vertical {
             width: 100%;
             max-width: 200px;
             aspect-ratio: 9 / 16;
@@ -41,8 +55,16 @@
             overflow: hidden;
             border: 1px solid #FFC0CB;
         }
-        .skill-img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; transition: transform 0.3s ease; background-color: #FFFFFF; display: block; }
-        .skill-img:hover { transform: scale(1.03); }
+        .skill-img-vertical { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            cursor: pointer; 
+            transition: transform 0.3s ease; 
+            background-color: #FFFFFF; 
+            display: block; 
+        }
+        .skill-img-vertical:hover { transform: scale(1.03); }
 
         /* Modal สำหรับดูรูปขยาย */
         .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
@@ -80,34 +102,30 @@
                 </ul>
             </div>
 
-            <!-- ด้านขวา: ความถนัดและทักษะ (รูปอัตราส่วน 9:16) -->
+            <!-- ด้านขวา: ความถนัดและทักษะ -->
             <div class="info-card">
                 <div class="card-title">💗 ความถนัดและทักษะ</div>
                 
-                <!-- ข้อ 1: จิตอาสา -->
+                <!-- ข้อ 1: จิตอาสา (แนวนอน) -->
                 <div class="skill-block">
                     <h3>🤝 1. จิตอาสา (Volunteer Spirit)</h3>
                     <p><!-- ใส่ข้อความอธิบายทักษะจิตอาสาที่นี่ --></p>
-                    <div class="skill-img-frame">
-                        <img src="NpVolunteer.jpg" alt="จิตอาสา" class="skill-img" onclick="openModal('volunteer1.jpg')">
-                    </div>
+                    <img src="NpVolunteer2.jpg" alt="จิตอาสา" class="skill-img-horizontal" onclick="openModal('NpVolunteer2.jpg')">
                 </div>
 
-                <!-- ข้อ 2: ทำงานเป็นทีม -->
+                <!-- ข้อ 2: ทำงานเป็นทีม (แนวนอน) -->
                 <div class="skill-block">
                     <h3>👥 2. การทำงานเป็นทีม (Teamwork)</h3>
                     <p><!-- ใส่ข้อความอธิบายการทำงานเป็นทีมที่นี่ --></p>
-                    <div class="skill-img-frame">
-                        <img src="NpRobot.jpg" alt="การทำงานเป็นทีม" class="skill-img" onclick="openModal('teamwork1.jpg')">
-                    </div>
+                    <img src="NpRobot.jpg" alt="การทำงานเป็นทีม" class="skill-img-horizontal" onclick="openModal('NpRobot.jpg')">
                 </div>
 
-                <!-- ข้อ 3: กิจกรรม -->
+                <!-- ข้อ 3: กิจกรรม (แนวตั้ง 9:16) -->
                 <div class="skill-block">
                     <h3>🎉 3. การเข้าร่วมกิจกรรม (Activities)</h3>
                     <p><!-- ใส่ข้อความอธิบายกิจกรรมที่นี่ --></p>
-                    <div class="skill-img-frame">
-                        <img src="tk5.jpg" alt="กิจกรรม" class="skill-img" onclick="openModal('activity1.jpg')">
+                    <div class="skill-img-frame-vertical">
+                        <img src="tk5.jpg" alt="กิจกรรม" class="skill-img-vertical" onclick="openModal('tk5.jpg')">
                     </div>
                 </div>
             </div>
